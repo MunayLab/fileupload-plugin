@@ -11,7 +11,7 @@ class ArchivoCommand implements grails.validation.Validateable {
 
     static constraints = {
         id nullable: true
-        nombre nullable: false
+        nombre nullable: true
         file nullable: true
         accion inList: ['upload', 'delete', 'none'], validator: { val, obj, errors ->
             if (val == 'delete' && obj.id == null)

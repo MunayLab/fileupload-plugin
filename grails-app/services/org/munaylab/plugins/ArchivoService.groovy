@@ -6,10 +6,10 @@ import grails.gorm.transactions.Transactional
 class ArchivoService {
 
     Archivo actualizarArchivo(ArchivoCommand command) {
-        if (command.accion == 'upload') {
-            return archivoService.subir(command)
-        } else if (command.accion == 'delete') {
-            return archivoService.borrar(command)
+        if (command?.accion == 'upload') {
+            return subir(command)
+        } else if (command?.accion == 'delete') {
+            return borrar(command)
         } else {
             return null
         }
@@ -45,7 +45,6 @@ class ArchivoService {
         } else {
             archivo = archivoConError(command.errors.fieldError.code)
         }
-
         archivo
     }
 
