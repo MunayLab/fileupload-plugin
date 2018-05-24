@@ -18,7 +18,7 @@ class ArchivoControllerSpec extends Specification
     void "descargar archivo"() {
         given:
         def archivo = crearArchivo
-        1 * controller.archivoService.obtener(_) >> { archivo }
+        1 * controller.archivoService.obtener(_,_) >> { archivo }
         when:
         controller.show(archivo.id)
         then:
@@ -28,7 +28,7 @@ class ArchivoControllerSpec extends Specification
     }
     void "archivo no encontrado"() {
         given:
-        1 * controller.archivoService.obtener(_) >> { null }
+        1 * controller.archivoService.obtener(_,_) >> { null }
         when:
         controller.show(1)
         then:

@@ -7,7 +7,7 @@ class ArchivoController {
     def archivoService
 
     def show(Long id) {
-        Archivo archivo = archivoService.obtener(id)
+        Archivo archivo = archivoService.obtener(id, params.nombre)
         if (!archivo) {
             render status: 404
         } else {

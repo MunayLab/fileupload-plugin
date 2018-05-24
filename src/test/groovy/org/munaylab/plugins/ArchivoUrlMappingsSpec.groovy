@@ -10,8 +10,14 @@ class ArchivoUrlMappingsSpec extends Specification implements UrlMappingsUnitTes
     }
     void "test forward mappings"() {
         expect:
-        verifyForwardUrlMapping("/archivo/show/1", controller: 'archivo', action: 'show') { id = '1' }
+        verifyForwardUrlMapping("/archivo/1234/imagen.jpg", controller: 'archivo', action: 'show') {
+            id      = '1234'
+            nombre  = 'imagen.jpg'
+        }
         and:
-        assertForwardUrlMapping("/archivo/show/1", controller: 'archivo', action: 'show') { id = '1' }
+        assertForwardUrlMapping("/archivo/1234/imagen.jpg", controller: 'archivo', action: 'show') {
+            id      = '1234'
+            nombre  = 'imagen.jpg'
+        }
     }
 }

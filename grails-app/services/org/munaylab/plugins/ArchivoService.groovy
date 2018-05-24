@@ -63,4 +63,9 @@ class ArchivoService {
         Archivo.get(id)
     }
 
+    @Transactional(readOnly = true)
+    Archivo obtener(Long id, String nombre) {
+        Archivo.findByIdAndNombre(id, nombre)
+    }
+
 }
