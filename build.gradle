@@ -59,11 +59,10 @@ bootRun {
     String springProfilesActive = 'spring.profiles.active'
     systemProperty springProfilesActive, System.getProperty(springProfilesActive)
 }
-// enable if you wish to package this plugin as a standalone application
+
 bootRepackage.enabled = false
 grailsPublish {
-    // TODO: Provide values here
-    user = 'Munaylab Team'
+    user = 'team@munaylab.org'
     key = 'key'
     githubSlug = 'foo/bar'
     license {
@@ -71,7 +70,7 @@ grailsPublish {
     }
     title = "File Upload Plugin"
     desc = "File Upload Plugin for Munaylab"
-    developers = [team:"Munaylab Team"]
+    developers = [team:"team@munaylab.org"]
 }
 
 assets {
